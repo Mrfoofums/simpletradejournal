@@ -62,6 +62,9 @@ class Trade:
             o.print_order_details()
         print(f'\tTotal Profit: ${self.pl}')
 
+    def write_to_csv(self):
+        return ''
+
 
 
 
