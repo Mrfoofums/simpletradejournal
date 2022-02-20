@@ -41,13 +41,27 @@ class Order:
         return ''
 
     def print_order_details(self):
-        print(self.Symbol + ' ')
-        print(f'Quantity: {self.Filled} TotalCost ${self.total_cost_as_float()}')
+        # print(self.Symbol + ' ')
+        print(f'\tQuantity: {self.Filled} Total Cost ${self.total_cost_as_float()}')
 
     def total_cost_as_float(self):
+        if self.Side == 'Sell':
+            return -100 * self.avg_price_as_float() * self.filled_as_float()
         return 100 * self.avg_price_as_float() * self.filled_as_float()
 
 
 class Trade:
-    pass
+    def __init__(self):
+        self.symbol = ''
+        self.orders = []
+        self.pl = 0.0
+
+    def trade_details(self):
+        print(f'{self.symbol}')
+        for o in self.orders:
+            o.print_order_details()
+        print(f'\tTotal Profit: ${self.pl}')
+
+
+
 
