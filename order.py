@@ -46,8 +46,8 @@ class Order:
 
     def total_cost_as_float(self):
         if self.Side == 'Sell':
-            return -100 * self.avg_price_as_float() * self.filled_as_float()
-        return 100 * self.avg_price_as_float() * self.filled_as_float()
+            return 100 * self.avg_price_as_float() * self.filled_as_float()
+        return -100 * self.avg_price_as_float() * self.filled_as_float()
 
 
 class Trade:
